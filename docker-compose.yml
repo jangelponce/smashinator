@@ -24,4 +24,13 @@ services:
       - ${PWD}/server:/server:z
     stdin_open: true
     tty: true
+  mongo:
+    build:
+      context: .
+      dockerfile: ./docker/mongo/Dockerfile
+    env_file: 
+      - ./docker/mongo/.env.development
+    restart: on-failure
+    volumes:
+      - ${PWD}/tmp/mongo:/data/db
   

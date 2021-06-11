@@ -1,8 +1,7 @@
 const { Router } = require('express');
 const router = Router();
+const players = require('./players')
 
-router.get('/', (req, res) => {
-    res.json({ title: 'Hello World' });
-});
+router.use('/players', players)
 
 module.exports = router;
