@@ -10,7 +10,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(morgan('dev'));
 app.use(express.json());
 
-mongoose.connect('mongodb://mongo/smashinator', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://mongo/smashinator', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
   .then(db => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
